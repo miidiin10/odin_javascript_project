@@ -8,25 +8,23 @@ let computerScore = 0;
 let roundWinner = '';
 
 function playRound(playerSelection, computerSelection) {
-   if(
+    let selection = ['Rock', 'Paper', 'Scissors'];
+    playerSelection = selection;
+    if(
        (playerSelection === 'Rock' && computerSelection === 'Scissors') ||
        (playerSelection === 'Scissors' && computerSelection === 'Paper') ||
        (playerSelection === 'Paper' && computerSelection === 'Rock')
      ) {
          playerScore++;
          return "You Win!";
-     }
-
-     if(
+     }else if(
         (computerSelection === 'Rock' && playerSelection === 'Scissors') ||
         (computerSelection === 'Scissors' && playerSelection === 'Paper') ||
         (computerSelection === 'Paper' && playerSelection === 'Rock')
       ) {
           playerScore++;
           return "You Lose!";
-      }
-    
-      if (playerSelection === computerSelection) {
+      } else if (playerSelection === computerSelection) {
           return "It's a Tie";
       }
 }
