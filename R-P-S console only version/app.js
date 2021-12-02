@@ -1,34 +1,42 @@
 function computerPlay() {
     let choices = ['Rock', 'Paper', 'Scissors'];
     let randomNumber = Math.floor(Math.random() * 3);
-    return choices[randomNumber];
+    return choices[randomNumber].toLowerCase();
 } 
 let playerScore = 0;
 let computerScore = 0;
 let roundWinner = '';
 
 function playRound(playerSelection, computerSelection) {
-    let selection = ['Rock', 'Paper', 'Scissors'];
-    playerSelection = selection;
-    if(
-       (playerSelection === 'Rock' && computerSelection === 'Scissors') ||
-       (playerSelection === 'Scissors' && computerSelection === 'Paper') ||
-       (playerSelection === 'Paper' && computerSelection === 'Rock')
-     ) {
-         playerScore++;
-         return "You Win!";
-     }else if(
-        (computerSelection === 'Rock' && playerSelection === 'Scissors') ||
-        (computerSelection === 'Scissors' && playerSelection === 'Paper') ||
-        (computerSelection === 'Paper' && playerSelection === 'Rock')
-      ) {
-          playerScore++;
-          return "You Lose!";
-      } else if (playerSelection === computerSelection) {
-          return "It's a Tie";
+    if (playerSelection == 'rock') {
+        if (computerSelection == 'scissors') {
+          return 'wins';
+        } else if (computerSelection == 'paper') {
+          return 'loses';
+        } else {
+          return 'ties';
+        } 
+      }
+      if (playerSelection == 'paper') {
+        if (computerSelection == 'rock') {
+          return 'wins';
+        } else if (computerSelection == 'scissors') {
+          return 'loses';
+        } else {
+          return 'ties';
+        } 
+      }
+      if (playerSelection == 'scissors') {
+        if (computerSelection == 'rock') {
+          return 'loses';
+        } else if (computerSelection == 'paper') {
+          return 'wins';
+        } else {
+          return 'ties';
+        } 
       }
 }
 
-const playerSelection = "paper";
+const playerSelection = "scissors";
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
