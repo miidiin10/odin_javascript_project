@@ -49,3 +49,20 @@ game();
 game();
 game();
 game();
+
+  let round = playRound(playerSelection, computerSelection);
+  if(round === 'You Win!') {
+    playerScore++;
+  }
+  if(round === 'You Lost!') {
+    computerScore++;
+  }
+
+function gameScore() {
+  if (playerScore > computerScore) {
+    console.log("Congrats! You beat Computer")
+  }
+  if (computerScore > playerScore) {
+    console.log("Sorry! You lost to Computer")
+  }
+}
