@@ -5,38 +5,39 @@ function computerPlay() {
 } 
 let playerScore = 0;
 let computerScore = 0;
-let roundWinner = '';
+let roundWinner = '' ;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == 'rock') {
         if (computerSelection == 'scissors') {
-          return 'wins';
+          return 'You Win!';
         } else if (computerSelection == 'paper') {
-          return 'loses';
+          return 'You Lost!';
         } else {
-          return 'ties';
+          return "It's a Tie";
         } 
       }
       if (playerSelection == 'paper') {
         if (computerSelection == 'rock') {
-          return 'wins';
+          return 'You Win!';
         } else if (computerSelection == 'scissors') {
-          return 'loses';
+          return 'You Lost!';
         } else {
-          return 'ties';
+          return "It's a Tie";
         } 
       }
       if (playerSelection == 'scissors') {
         if (computerSelection == 'rock') {
-          return 'loses';
+          return 'You Lost!';
         } else if (computerSelection == 'paper') {
-          return 'wins';
+          return 'You Win!';
         } else {
-          return 'ties';
+          return "It's a Tie";
         } 
       }
 }
 
-const playerSelection = "scissors";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+    playRound(playerSelection, computerSelection);
+    console.log();
+}
