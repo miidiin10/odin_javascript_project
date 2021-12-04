@@ -37,7 +37,15 @@ function playRound(playerSelection, computerSelection) {
       }
 }
 
+    
 function game() {
-    playRound(playerSelection, computerSelection);
-    console.log();
+  const playerSelection = prompt("input 'Rock', 'Paper' or 'Scissors'").toLowerCase();
+  const computerSelection = computerPlay();
+  return console.log(playRound(playerSelection, computerSelection));
 }
+
+game();
+game();
+game();
+game();
+game();
