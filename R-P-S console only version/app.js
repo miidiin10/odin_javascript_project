@@ -3,9 +3,11 @@ function computerPlay() {
     let randomNumber = Math.floor(Math.random() * 3);
     return choices[randomNumber].toLowerCase();
 } 
-let playerScore = 0;
-let computerScore = 0;
-let roundWinner = '' ;
+
+function playerPlay() {
+  
+} 
+
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == 'rock') {
@@ -39,9 +41,13 @@ function playRound(playerSelection, computerSelection) {
 
     
 function game() {
+  
   const playerSelection = prompt("input 'Rock', 'Paper' or 'Scissors'").toLowerCase();
   const computerSelection = computerPlay();
-  return console.log(playRound(playerSelection, computerSelection));
+  let roundResult = playRound(playerSelection, computerSelection);
+  
+  console.log(roundResult);
+  
 }
 
 game();
@@ -50,19 +56,25 @@ game();
 game();
 game();
 
-  let round = playRound(playerSelection, computerSelection);
-  if(round === 'You Win!') {
+function gameScore() {
+  let result = playRound();
+  let playerScore = 0;
+  let computerScore = 0;
+
+  if (result === "You win!") {
     playerScore++;
-  }
-  if(round === 'You Lost!') {
+  } else if (result === "You Lost!") {
     computerScore++;
   }
 
-function gameScore() {
   if (playerScore > computerScore) {
-    console.log("Congrats! You beat Computer")
+    console.log('playerWin');
+    return;
   }
   if (computerScore > playerScore) {
-    console.log("Sorry! You lost to Computer")
+    console.log('computerWin');
+    return;
   }
 }
+
+
